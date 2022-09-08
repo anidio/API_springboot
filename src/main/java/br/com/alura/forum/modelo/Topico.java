@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Topico {
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
@@ -29,7 +29,10 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
-
+	
+	public Topico() {
+	}
+	
 	public Topico(String titulo, String mensagem, Curso curso) {
 		this.titulo = titulo;
 		this.mensagem = mensagem;
